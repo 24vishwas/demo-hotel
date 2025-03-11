@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Chitra : Budget Friendly Stay in coorg</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #FFFFFF;
+            padding: 15px 20px;
+            color: white;
+            height: 70px;
+            box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.25);
+            position: fixed;
+            z-index: 1001;
+            width: 100%;
+            left: 0px;
+            top: 0px;
+        }
+        .logo {
+            width: 200px;
+            height: 100%;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin-right: 5%;
+            align-items: center;
+            justify-content: center;
+            /* width: 45%; */
+        }
+        .nav-links li {
+            margin: 3%;
+        }
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            
+        }
+        .nav-links a:hover{
+            color: #3c419a;
+            font-weight: 600;
+            transition: .2s ease-out;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #333 ;
+            font-weight: 600;
+            
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                flex-direction: column;
+                position: absolute;
+                top: 100px;
+                left: 0;
+                width: 100%;
+                background: white;
+                text-align: center;
+                transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                
+            }
+            .nav-links.show {
+                min-height: 400px; /* Adjust based on content */
+                opacity: 1;
+                box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.25);
+                z-index: 10000;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .Primary-button{
+                width: 200px;
+            }
+        }
+    </style> -->
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img class="logo" src="assets/hotel-chitra-logo-01.svg" alt="">
+            
+            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                <li>
+                    <a href="tel:1234567890">
+                        <button class="Primary-button">Call Now</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:1234567890">
+                        <button class="Primary-button">Book Now</button>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="carousel">
+            <div class="carousel-container">
+                <div class="slide" style="background-image: url('assets/home1.jpg');">
+                    <div class="content">
+                        <h1>Lorem ipsum dolor sit amet.</h1>
+                        <p>This is a description for Slide 1. Make it engaging!</p>
+                        <div class="buttons">
+                            <a href="#" class="btn primary">Learn More</a>
+                            <a href="#" class="btn secondary">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="slide" style="background-image: url('assets/home1.jpg');">
+                    <div class="content">
+                        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, dolore!</h1>
+                        <p>This is a description for Slide 2. Make it appealing!</p>
+                        <div class="buttons">
+                            <a href="#" class="btn primary">Discover</a>
+                            <a href="#" class="btn secondary">Join Now</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="slide" style="background-image: url('https://via.placeholder.com/1920x800/75ff33/ffffff?text=Slide+3');">
+                    <div class="content">
+                        <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem!</h1>
+                        <p>This is a description for Slide 3. Make it compelling!</p>
+                        <div class="buttons">
+                            <a href="#" class="btn primary">Explore</a>
+                            <a href="#" class="btn secondary">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Navigation Arrows -->
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+    
+            <!-- Dots -->
+            <div class="dots-container"></div>
+        </div>
+    </header>
+    <section class="about-section">
+        <div class="about-container container">
+            <span class="subtitle">ABOUT</span>
+            <h1>Hotel Chitra</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam distinctio, nemo atque dolor beatae ratione dicta tenetur repellat necessitatibus deleniti, eaque hic nulla rerum velit amet tempora. Aliquid corporis error quos vel enim numquam officia est perferendis necessitatibus! Vel illo ea molestias nesciunt saepe, maiores quae sapiente officia perferendis distinctio voluptatum rerum quam inventore, mollitia molestiae. Aperiam inventore sunt tempora vel aut distinctio iste, porro quia. Possimus quibusdam mollitia sit consequatur nostrum. Neque, repudiandae. Aliquid iste consequuntur eligendi doloribus quam, necessitatibus officiis autem cum minus deleniti? Consectetur architecto ab, blanditiis similique numquam eaque fugiat ut odit quis placeat impedit quibusdam.
+            </p>
+            <h2>Explore Our Stay</h2>
+            <ul>
+                <li> <a href="tel:1234567890">
+                    <button class="btn Primary-button">Call Now</button>
+                </a></li>
+                <li>
+                    <a href="tel:1234567890">
+                        <button class="btn Primary-button">Book Now</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <button class="btn Primary-button">Explore</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="rooms-section">
+        <div class="rooms-container">
+            <div class="container">
+                <span class="subtitle">OUR ROOMS</span>
+                <h1>Welcome to our Rooms</h1>
+            </div>
+            <div class="rooms-card-wrapper">
+                <div class="room-card">
+                    <div class="img-wrapper">
+                        <img src="assets/room.jpg" alt="image">
+                    </div>
+                    <h2>2 Bed Deluxe Rooms</h2>
+                    <span>Price</span>
+                    <h3>900</h3>
+                    <div class="card-btn-wrapper">
+                        <a href="tel:1234567890">
+                            <button class="btn Primary-button">Call Now</button>
+                        </a>
+                        <a href="tel:1234567890">
+                            <button class="btn Primary-button">Book Now</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <div class="img-wrapper">
+                        <img src="assets/room.jpg" alt="image">
+                    </div>
+                    <h2>2 Bed Deluxe Rooms</h2>
+                    <span>Price</span>
+                    <h3>900</h3>
+                    <div class="card-btn-wrapper">
+                        <a href="tel:1234567890">
+                            <button class="btn Primary-button">Call Now</button>
+                        </a>
+                        <a href="tel:1234567890">
+                            <button class="btn Primary-button">Book Now</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <div class="img-wrapper">
+                        <img src="assets/room.jpg" alt="image">
+                    </div>
+                    <h2>2 Bed Deluxe Rooms</h2>
+                    <span>Price</span>
+                    <h3>900</h3>
+                    <div class="card-btn-wrapper">
+                        <a href="tel:1234567890">
+                            <button class="btn Primary-button">Call Now</button>
+                        </a>
+                        <a href="tel:1234567890">
+                            <button class="btn Primary-button">Book Now</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <div class="img-wrapper">
+                        <img src="assets/room.jpg" alt="image">
+                    </div>
+                    <h2>2 Bed Deluxe Rooms</h2>
+                    <span>Price</span>
+                    <h3>900</h3>
+                    <div class="card-btn-wrapper">
+                        <a href="tel:1234567890">
+                            <button class="btn Primary-button">Call Now</button>
+                        </a>
+                        <a href="tel:1234567890">
+                            <button class="btn Primary-button">Book Now</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="amenities-section">
+        <div class="amenities-container container">
+            <span class="subtitle">AMENETIES</span>
+            <h1>For Your Comfortable Stay</h1>
+            <div class="amenties-wrapper">
+                <div class="amenity">
+                    <div class="img-wrapper">
+                        <img src="assets/parking.svg" alt="img">
+                    </div>
+                    <h2>Parking</h2>
+                </div>
+                <div class="amenity">
+                    <div class="img-wrapper">
+                        <img src="assets/rooms.svg" alt="img">
+                    </div>
+                    <h2>Deluxe Rooms</h2>
+                </div>
+                <div class="amenity">
+                    <div class="img-wrapper">
+                        <img src="assets/wifi.svg" alt="img">
+                    </div>
+                    <h2>Wifi</h2>
+                </div>
+                <div class="amenity">
+                    <div class="img-wrapper">
+                        <img src="assets/heater.svg" alt="img">
+                    </div>
+                    <h2>Heater</h2>
+                </div>
+                <div class="amenity">
+                    <div class="img-wrapper">
+                        <img src="assets/tv.svg" alt="img">
+                    </div>
+                    <h2>Telivision</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <span class="subtitle">contact us</span>
+            <h1>Find Us On Maps</h1>
+            <div class="footer-container">
+                <div class="maps">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.15772667396!2d76.65259997472245!3d12.305162987952293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf701103f9a1f9%3A0xc37fbae2a124da0d!2sMysore%20Palace!5e0!3m2!1sen!2sin!4v1741718862734!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="footer-content">
+                    <h3>Contact Us</h3>
+                    <div>
+                        <h4>Mobile Number</h4>
+                        <span><a href="tel:1234567890">+91 1234567890</a></span>
+                    </div>
+                    <div>
+                        <h4>Whatsapp</h4>
+                        <span><a href="https://wa.me/1234567890">+91 1234567890</a></span>
+                    </div>
+                    <div>
+                        <h4>Email</h4>
+                        <span><a href="mailto:OyO4M@example.com">email@abc.com</a></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div style="height: 100px; background-color: var(--primary-purple); margin-top: 5%;">
+
+    </div>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("show");
+        }
+    </script>
+    <script>
+        const carouselContainer = document.querySelector(".carousel-container");
+        const slides = document.querySelectorAll(".slide");
+        const prevButton = document.querySelector(".prev");
+        const nextButton = document.querySelector(".next");
+        const dotsContainer = document.querySelector(".dots-container");
+
+        let currentIndex = 0;
+        let autoScrollInterval;
+        const totalSlides = slides.length;
+
+                // Create dots
+                slides.forEach((_, index) => {
+                    const dot = document.createElement("div");
+                    dot.classList.add("dot");
+                    if (index === 0) dot.classList.add("active");
+                    dot.addEventListener("click", () => goToSlide(index));
+                    dotsContainer.appendChild(dot);
+                });
+
+                const dots = document.querySelectorAll(".dot");
+
+                // Function to update slide position
+                function updateSlide() {
+                    carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    dots.forEach(dot => dot.classList.remove("active"));
+                    dots[currentIndex].classList.add("active");
+                }
+
+                // Function to go to a specific slide
+                function goToSlide(index) {
+                    currentIndex = index;
+                    updateSlide();
+                    resetAutoScroll();
+                }
+
+                // Next and Previous Slide
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                    updateSlide();
+                    resetAutoScroll();
+                }
+
+                function prevSlide() {
+                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                    updateSlide();
+                    resetAutoScroll();
+                }
+
+                // Auto Scroll
+                function startAutoScroll() {
+                    autoScrollInterval = setInterval(nextSlide, 5000); // Change every 5 sec
+                }
+
+                function resetAutoScroll() {
+                    clearInterval(autoScrollInterval);
+                    startAutoScroll();
+                }
+
+                // Touch Events for Swiping
+                let startX = 0;
+                carouselContainer.addEventListener("touchstart", (e) => {
+                    startX = e.touches[0].clientX;
+                });
+
+                carouselContainer.addEventListener("touchend", (e) => {
+                    let endX = e.changedTouches[0].clientX;
+                    if (startX - endX > 50) nextSlide(); // Swipe left
+                    else if (startX - endX < -50) prevSlide(); // Swipe right
+                });
+
+                // Event Listeners
+                nextButton.addEventListener("click", nextSlide);
+                prevButton.addEventListener("click", prevSlide);
+
+                // Start auto-scrolling
+                startAutoScroll();
+
+    </script>
+</body>
+</html>
