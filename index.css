@@ -466,13 +466,14 @@ p {
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 999;
 }
 
 .popup-content {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    width: 600px;
+    width: 6*00px;
     position: relative;
 }
 
@@ -489,15 +490,7 @@ p {
     cursor: pointer;
 }
 
-.open-btn {
-    margin: 20px;
-    padding: 10px 20px;
-    background-color: blue;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
+
 
 form {
     display: flex;
@@ -511,7 +504,7 @@ label {
     flex: 1 1 48%;
 }
 
-input {
+input, select {
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #ccc;
