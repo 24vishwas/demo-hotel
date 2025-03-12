@@ -107,8 +107,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="tel:1234567890">
-                        <button class="Primary-button">Book Now</button>
+                    <a href="#">
+                        <button class="Primary-button open-btn">Book Now</button>
                     </a>
                 </li>
             </ul>
@@ -322,7 +322,33 @@
         </div>
     </footer>
     <div style="height: 100px; background-color: var(--primary-purple); margin-top: 5%;">
-
+    </div>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            <h2>Contact Form</h2>
+            <form>
+                <label>Arrival:
+                    <input type="date" required>
+                </label>
+                <label>Departure:
+                    <input type="date" required>
+                </label>
+                <label>First Name:
+                    <input type="text" placeholder="First Name" required>
+                </label>
+                <label>Last Name:
+                    <input type="text" placeholder="Last Name" required>
+                </label>
+                <label style="flex: 1 1 100%;">Mobile Number:
+                    <input type="tel" placeholder="Mobile Number" required>
+                </label>
+                <label style="flex: 1 1 100%;">Email:
+                    <input type="email" placeholder="Email" required>
+                </label>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
     <script>
         function toggleMenu() {
@@ -408,6 +434,25 @@
                 // Start auto-scrolling
                 startAutoScroll();
 
+    </script>
+    <script>
+         const openBtn = document.querySelector('.open-btn');
+        const closeBtn = document.querySelector('#closeBtn');
+        const popup = document.querySelector('#popup');
+
+        openBtn.addEventListener('click', () => {
+            popup.style.display = 'flex';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        }); 
     </script>
 </body>
 </html>
