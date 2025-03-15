@@ -327,36 +327,36 @@
         <div class="popup-content">
             <button class="close-btn" id="closeBtn">&times;</button>
             <h2>Contact Form</h2>
-            <form>
+            <form id="contact-form" action="">
                 <label>Arrival:
-                    <input type="date" required>
+                  <input type="date" id="arrival" required>
                 </label>
                 <label>Departure:
-                    <input type="date" required>
+                  <input type="date" id="departure" required>
                 </label>
                 <label>First Name:
-                    <input type="text" placeholder="First Name" required>
+                  <input type="text" id="first_name" placeholder="First Name" required>
                 </label>
                 <label>Last Name:
-                    <input type="text" placeholder="Last Name" required>
+                  <input type="text" id="last_name" placeholder="Last Name" required>
                 </label>
                 <label style="flex: 1 1 100%;">Mobile Number:
-                    <input type="tel" placeholder="Mobile Number" required>
+                  <input type="tel" id="mobile" placeholder="Mobile Number" required>
                 </label>
                 <label style="flex: 1 1 100%;">Email:
-                    <input type="email" placeholder="Email" required>
+                  <input type="email" id="email" placeholder="Email" required>
                 </label>
                 <label style="flex: 1 1 100%;">Room Category:
-                    <select required>
-                        <option value="">Select Room Category</option>
-                        <option value="single">Single Room - $100</option>
-                        <option value="double">Double Room - $180</option>
-                        <option value="suite">Suite - $250</option>
-                        <option value="deluxe">Deluxe - $300</option>
-                    </select>
+                  <select id="room_category" required>
+                    <option value="">Select Room Category</option>
+                    <option value="single">Single Room - $100</option>
+                    <option value="double">Double Room - $180</option>
+                    <option value="suite">Suite - $250</option>
+                    <option value="deluxe">Deluxe - $300</option>
+                  </select>
                 </label>
                 <button type="submit">Submit</button>
-            </form>
+              </form>
         </div>
     </div>
     <script>
@@ -463,5 +463,46 @@
             }
         }); 
     </script>
+    <!-- Add EmailJS SDK -->
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+          emailjs.init("XqIKwkRb03mlroOBr"); // Replace with your Email.js Public Key
+        })();
+      
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+          event.preventDefault(); // Prevent form from refreshing the page
+      
+          // Collect form data
+          const formData = {
+            arrival: document.getElementById("arrival").value,
+            departure: document.getElementById("departure").value,
+            first_name: document.getElementById("first_name").value,
+            last_name: document.getElementById("last_name").value,
+            mobile: document.getElementById("mobile").value,
+            email: document.getElementById("email").value,
+            room_category: document.getElementById("room_category").value
+          };
+      
+          // Send email to the admin
+          emailjs.send("service_1r53ux5", "template_pvoh3xd", formData)
+            .then(function(response) {
+              alert("Booking details sent successfully!");
+              document.getElementById("contact-form").reset();
+            }, function(error) {
+              alert("Failed to send booking details: " + error);
+            });
+      
+          // Send confirmation email to the user
+          emailjs.send("service_1r53ux5", "template_63soocw", formData)
+            .then(function(response) {
+              console.log("Confirmation email sent to user!");
+            }, function(error) {
+              console.error("Failed to send confirmation email: ", error);
+            });
+        });
+      </script>
+      
 </body>
 </html>
