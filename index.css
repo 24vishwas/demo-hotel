@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 :root{
-    --primary-purple: #673AB7;
+    --primary-purple: #3c419a;
 }
 .navbar {
     display: flex;
@@ -25,7 +25,7 @@
 .logo {
     width: 200px;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .nav-links {
     list-style: none;
@@ -306,7 +306,8 @@ p {
 }
 .room-card{
     width: calc(33.33% - 30px);
-    box-shadow: 0px 0px 25px 10px rgba(255, 170, 1, 0.25)
+    box-shadow: 0px 0px 25px 10px rgba(255, 170, 1, 0.25);
+    padding-bottom: 20px;
 }
 .room-card .img-wrapper{
     width: 100%;

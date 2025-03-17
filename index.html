@@ -195,7 +195,7 @@
                     </div>
                     <h2>2 Bed Deluxe Rooms</h2>
                     <span>Price</span>
-                    <h3>900</h3>
+                    <h3>$900</h3>
                     <div class="card-btn-wrapper">
                         <a href="tel:1234567890">
                             <button class="btn Primary-button">Call Now</button>
@@ -211,7 +211,7 @@
                     </div>
                     <h2>2 Bed Deluxe Rooms</h2>
                     <span>Price</span>
-                    <h3>900</h3>
+                    <h3>$900</h3>
                     <div class="card-btn-wrapper">
                         <a href="tel:1234567890">
                             <button class="btn Primary-button">Call Now</button>
@@ -227,7 +227,7 @@
                     </div>
                     <h2>2 Bed Deluxe Rooms</h2>
                     <span>Price</span>
-                    <h3>900</h3>
+                    <h3>$900</h3>
                     <div class="card-btn-wrapper">
                         <a href="tel:1234567890">
                             <button class="btn Primary-button">Call Now</button>
@@ -243,7 +243,7 @@
                     </div>
                     <h2>2 Bed Deluxe Rooms</h2>
                     <span>Price</span>
-                    <h3>900</h3>
+                    <h3>$900</h3>
                     <div class="card-btn-wrapper">
                         <a href="tel:1234567890">
                             <button class="btn Primary-button">Call Now</button>
@@ -364,6 +364,12 @@
             const navLinks = document.getElementById("navLinks");
             navLinks.classList.toggle("show");
         }
+        document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.remove("show");
+        });
+    });
     </script>
     <script>
         const carouselContainer = document.querySelector(".carousel-container");
